@@ -1,0 +1,107 @@
+Program 1: Build a logic to print the below pattern
+Input : 5
+Output :
+5 4 3 2 1
+4 4 3 2 1
+3 3 3 2 1
+2 2 2 2 1
+1 1 1 1 1
+
+a = []
+value = int(input("enter the value = "))
+n=value
+v=0
+p=0
+while n >0:
+    for i in range(value,0,-1):
+         #print(i, end='')
+         a.append(str(i))
+    #print(a)
+    if v > 0:
+        for rec in range(0, v+1):
+            a[rec] = a[p]
+        print(' '.join(a))
+    else:
+        print(' '.join(a))
+    v = v + 1
+    p = v
+    #print()
+    a = []
+    n = n-1
+	
+.........................
+def my_prob(value):
+    a = []
+    n=value
+    v=0
+    p=0
+    while n >0:
+        for i in range(value,0,-1):
+         #print(i, end='')
+            a.append(str(i))
+    #print(a)
+        if v > 0:
+            for rec in range(0, v+1):
+                a[rec] = a[p]
+            print(' '.join(a))
+        else:
+            print(' '.join(a))
+        v = v + 1
+        p = v
+        #print()
+        a = []
+        n = n-1
+        
+value = int(input("enter the value = "))
+my_prob(value)
+
+...................
+def problem1(n):
+    op = []
+    for i in range(n,0,-1):
+        print (" ".join([str(i) if j>=i else str(j) for j in range(n,0,-1)]))
+        print ("\n")
+    
+print (" ======================= PROBLEM 1=====================")
+inp = input("Please enter an input value for Problem 1  : ")
+problem1(int(inp))
+
+Program 2: Build a logic to print the below pattern
+Input : 5
+Output :
+1
+2 9
+3 8 10
+4 7 11 14
+5 6 12 13 15
+
+def problem2(n):
+    #Different approach
+    sumv = sum([i for i in range(1, n+1)])
+    li = [i for i in range(1,sumv)]
+
+    op = []
+    fi = []
+    k = n
+    for i in range(1,sumv+1):
+        if len(op)==k:
+            fi.append(op)
+            op = []
+            op.append(i)
+            k-=1
+        else:
+            op.append(i)
+
+    fi.append([sumv])
+    fi = [fi[i] if i%2==0 else fi[i][::-1] for i in range(len(fi))]
+
+    for i in range(len(fi)):
+        while len(fi[i]) < n:
+            fi[i].insert(0,'')
+
+    for i in range(len(fi)):
+        print (" ".join([str(fi[j][i]) for j in range(len(fi))]))
+
+print (" =======================Problem 2 ================ \n ")
+inp = input("Please enter an input value for Problem 2 : ")
+problem2(int(inp))
