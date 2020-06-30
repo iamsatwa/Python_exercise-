@@ -105,3 +105,615 @@ def problem2(n):
 print (" =======================Problem 2 ================ \n ")
 inp = input("Please enter an input value for Problem 2 : ")
 problem2(int(inp))
+.........................................
+"""
+input value 7
+output
+7 7 7 7 7 7 7 7 7 7 7 7 7
+7 6 6 6 6 6 6 6 6 6 6 6 7
+7 6 5 5 5 5 5 5 5 5 5 6 7
+7 6 5 4 4 4 4 4 4 4 5 6 7
+7 6 5 4 3 3 3 3 3 4 5 6 7
+7 6 5 4 3 2 2 2 3 4 5 6 7
+7 6 5 4 3 2 1 2 3 4 5 6 7
+7 6 5 4 3 2 2 2 3 4 5 6 7
+7 6 5 4 3 3 3 3 3 4 5 6 7
+7 6 5 4 4 4 4 4 4 4 5 6 7
+7 6 5 5 5 5 5 5 5 5 5 6 7
+7 6 6 6 6 6 6 6 6 6 6 6 7
+7 7 7 7 7 7 7 7 7 7 7 7 7
+
+"""
+n = int(input("Enter the value = "))
+m = n + (n-1)
+k = n
+for i in range(0, m):
+    for j in range(0, m):
+        if i <=(n-1):
+            if i == 0:
+                print(k, end=' ')
+            if i >= 1:
+                if j < i:
+                    print(k-j, end=' ')
+                elif j >= i and j < m-i:
+                    print(k-i, end=' ')
+                else:
+                    print((j-k+1)+1, end=' ')
+        elif i == n-1:
+            if j<n:
+                print(k-j, end=' ')
+            else:
+                print((j-k+1)+1, end=' ')
+        elif i >= n:
+            x = m-i-1
+            if i == m:
+                print(k, end=' ')
+            if j < x:
+                print(k-j, end=' ')
+            elif j>=x and j<m-x:
+                print(k-x, end=' ')
+            else:
+                print((j-k+1)+1, end=' ')
+    print()
+........................
+Enter Number : 5
+1 1 1 1 1 1 1 1 1 
+1 2 2 2 2 2 2 2 1 
+1 2 3 3 3 3 3 2 1 
+1 2 3 4 4 4 3 2 1 
+1 2 3 4 5 4 3 2 1 
+1 2 3 4 4 4 3 2 1 
+1 2 3 3 3 3 3 2 1 
+1 2 2 2 2 2 2 2 1 
+1 1 1 1 1 1 1 1 1 
+# l = int(input("Enter Number : "))
+# len = l * 2 - 1
+# for i in range(1, len + 1):
+#     for j in range(1, len + 1):
+#         min1 = i - 1 if i <= len - i else len - i
+#         min2 = j - 1 if j <= len - j else len - j
+#         min = min1 if min1 <= min2 else min2
+#         print(l - min, end=' ')
+#     print(' ')
+
+n = int(input("Enter Number : "))
+for i in range(-n + 1, n):
+    for j in range(-n + 1, n):
+        if abs(i) >= abs(j):
+            print(n - abs(i), end=" ")
+        else:
+            print(n - abs(j), end=" ")
+    print("")
+........................................
+"""
+Enter the value = 5
+     *
+    * *
+   *   *
+  *     *
+ * * * * *
+"""
+v = int(input("Enter the value = "))
+r = v
+for i in range(0, v):
+    for k in range(r, 0, -1):
+        print(end=" ")
+    r = r - 1
+    if i in [0, 1, v-1]:
+        for l in range(0, i+1):
+            print("*", end=" ")
+    else:
+        print("*", end=' ')
+        for j in range(0, i-1):
+            print(" ", end=' ')
+        print("*", end=' ')
+    print()
+   .............................................
+   """
+input 5
+**********
+
+****  ****
+
+***    ***
+
+**      **
+
+*        *
+"""
+
+n = int(input("enter the value = "))
+k = l = n
+c = 0
+for i in range(0, n):
+    for j in range(k, 0, -1):
+        print("*", end='')
+    if c > 0:
+        for t in range(i):
+            print(" ", end='')
+        for p in range(i):
+            print(" ", end='')
+    for o in range(l, 0, -1):
+        print("*", end='')
+    l = l-1
+    k = k - 1
+    c = c + 1
+    print()
+...............................
+"""
+Enter the value = 5
+*****
+
+ ****
+
+  ***
+
+   **
+
+    *
+
+"""
+rec = int(input("Enter the value = "))
+val = rec
+c = 0
+for i in range(rec):
+    if c > 0:
+        for k in range(i):
+            print(" ", end='')
+    for j in range(val, 0,-1):
+        print("*", end='')
+    c = c+1
+    val = val - 1
+    print()
+.......................................
+"""
+Enter the value = 5
+*****
+
+****
+
+***
+
+**
+
+*
+"""
+val = int(input("Enter the value = "))
+in_val = val
+for i in range(val):
+    for k in range(in_val, 0, -1):
+        print("*", end='')
+    print()
+    in_val = in_val - 1
+.....................................
+"""
+input = 5
+x
+
+xx
+
+xxx
+
+xxxx
+
+xxxxx
+"""
+
+data = int(input("Enter the number = "))
+for i in range(data):
+    for j in range(0, i+1):
+        print("x", end='')
+    print()
+.............................................
+"""
+Enter the value= 5
+    *
+
+   **
+
+  ***
+
+ ****
+
+*****
+
+"""
+data = int(input("Enter the value= "))
+val = data
+c = 1
+for i in range(data, 0, -1):
+    for j in range(0, i-1):
+        print(" ", end='')
+    for k in range(0, c):
+        print("*", end='')
+    c = c+1
+    print()
+....................................
+"""
+input 5
+*****
+*   *
+*   *
+*   *
+*****
+"""
+val = int(input("Enter the value = "))
+for i in range(0, val):
+    if i == 0 or i == (val - 1):
+        for k in range(0, val):
+            print("*", end='')
+    else:
+        print("*", end='')
+        for j in range(1, val - 1):
+            print(" ", end='')
+        print("*", end='')
+    print()
+......................................
+"""
+Enter the value = 5
+*********
+*       *
+*       *
+*       *
+*********
+"""
+val = int(input("Enter the value = "))
+rec = val + (val-1)
+for i in range(0, val):
+    if i == 0 or i == (val - 1):
+        for k in range(0, rec):
+            print("*", end='')
+    else:
+        print("*", end='')
+        for j in range(1, rec - 1):
+            print(" ", end='')
+        print("*", end='')
+    print()
+..........................................
+"""
+Enter the value = 5
+*****
+*  *
+* *
+**
+*
+"""
+val = int(input("Enter the value = "))
+rec = val
+c = 0
+for i in range(0, val):
+    if c > 0:
+        if i == (val-1):
+            print("*", end='')
+            break
+        print("*", end='')
+        for k in range(1, rec-1):
+            print(" ", end='')
+        print("*", end='')
+    else:
+        for j in range(rec, 0, -1):
+            print("*", end='')
+    rec = rec - 1
+    c = c + 1
+    print()
+............................................
+"""
+Enter the value = 5
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+"""
+val = int(input("Enter the value = "))
+res = val
+for i in range(0, val):
+    for j in range(0, res):
+        print(end=" ")
+    res = res - 1
+    for k in range(0, i+1):
+        print("*", end=" ")
+    print()
+
+....................................................
+"""
+Enter the value = 5
+ * * * * *
+  * * * *
+   * * *
+    * *
+     *
+"""
+val = int(input("Enter the value = "))
+res = val
+for i in range(0, val):
+    for j in range(0, i+1):
+        print(end=" ")
+    for k in range(res, 0, -1):
+        print("*", end=" ")
+    res = res - 1
+    print()
+............................................
+"""
+Enter the value =6
+      *
+     * *
+    * * *
+   * * * *
+  * * * * *
+ * * * * * *
+ * * * * * *
+  * * * * *
+   * * * *
+    * * *
+     * *
+      * 
+"""
+v = int(input("Enter the value ="))
+r = p = v
+for i in range(0, v):
+    for j in range(r, 0, -1):
+        print(end=" ")
+    r = r-1
+    for k in range(0, i+1):
+        print("*",  end=" ")
+    print()
+for j in range(0, v):
+    for l in range(0, j+1):
+        print(end=" ")
+    for m in range(p, 0, -1):
+        print("*", end=" ")
+    p = p -1
+    print()
+.............................
+"""
+ * * * * *
+  * * * *
+   * * *
+    * *
+     *
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+"""
+v = int(input("Enter the value ="))
+r = p = v
+
+for j in range(0, v):
+    for l in range(0, j+1):
+        print(end=" ")
+    for m in range(p, 0, -1):
+        print("*", end=" ")
+    p = p -1
+    print()
+
+for i in range(0, v):
+    for j in range(r, 0, -1):
+        print(end=" ")
+    r = r-1
+    for k in range(0, i+1):
+        print("*",  end=" ")
+    print()
+...............................
+"""
+Enter the number = 5
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+"""
+v = int(input("Enter the number = "))
+m = n = v
+a = b = v
+c = 0
+for i in range(0, v):
+    for j in range(0, m):
+        print("*", end='')
+    m = m-1
+    if c>0:
+        for t in range(i):
+            print(" ", end='')
+        for k in range(0, i):
+            print(' ', end='')
+    for l in range(n, 0, -1):
+        print("*", end='')
+    n = n -1
+    c = c + 1
+    print()
+
+count = 0
+val = a*2 - 2
+for i in range(0, v):
+    for j in range(0, i+1):
+        print("*", end='')
+    for k in range(0, val):
+        print(" ", end='')
+    for l in range(0, i+1):
+        print("*", end='')
+    val = val - 2
+    print()
+
+# c = 1
+# for i in range(v, 0, -1):
+#     for j in range(0, i-1):
+#         print(" ", end='')
+#     for k in range(0, c):
+#         print("*", end='')
+#     c = c+1
+#     print()
+................................
+"""
+Enter the value = 5
+1
+26
+3710
+481113
+59121415
+"""
+n = int(input("Enter the value = "))
+k = 1
+for i in range(1, n+1):
+    k = i
+    for j in range(1, i+1):
+        print(k, end='')
+        k = k + n - j
+    print()
+.............................
+"""
+Enter the value = 5
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+
+"""
+n = int(input("Enter the value = "))
+for i in range(0, n):
+    for j in range(0, i+1):
+        print("*", end=' ')
+    print()
+for k in range(n-1,0,-1):
+    for l in range(0, k):
+        print("*", end=' ')
+    print()
+............................................
+"""
+Enter the value = 5
+1
+1 2 1
+1 2 3 2 1
+1 2 3 4 3 2 1
+1 2 3 4 5 4 3 2 1 
+"""
+n = int(input("Enter the value = "))
+for i in range(1, n+1):
+    for j in range(1, i+1):
+        print(j, end=' ')
+    for k in range(i-1, 0, -1):
+        print(k, end=' ')
+    print()
+
+
+..........................................
+"""
+Enter the number = 5
+A
+A B A
+A B C B A
+A B C D C B A
+A B C D E D C B A
+"""
+n = int(input("Enter the number = "))
+for i in range(1, n+1):
+    for j in range(65, i+65):
+        print(chr(j), end=' ')
+    for k in range(j-1, 64, -1):
+        print(chr(k), end=' ')
+    print()
+........................................
+"""
+Enter the number = 5
+********1********
+*******2*2*******
+******3*3*3******
+*****4*4*4*4*****
+****5*5*5*5*5****
+
+Enter the number = 7
+********1********
+*******2*2*******
+******3*3*3******
+*****4*4*4*4*****
+****5*5*5*5*5****
+***6*6*6*6*6*6***
+**7*7*7*7*7*7*7**
+
+"""
+n = int(input("Enter the number = "))
+star = 8
+num = 0
+for i in range(1, n+1):
+    for j in range(1, star+1):
+        if(i+j <= star+1):
+            print("*", end='')
+    num = num + 1
+    for j in range(1,i+1):
+        print(num, end='')
+        if i ==1:
+            print("*", end='')
+        if(i >1):
+            print("*", end='')
+    for j in range(1, star+1):
+        if(i+n < j+n):
+            print("*", end='')
+    print()
+...............................
+"""
+Enter the value = 5
+        1
+      1 2 1
+    1 2 3 2 1
+  1 2 3 4 3 2 1
+1 2 3 4 5 4 3 2 1
+"""
+val = int(input("Enter the value = "))
+res = val + (val - 2)
+
+for i in range(1, val+1):
+    for j in range(0, res):
+        print(end=" ")
+    for k in range(1, i+1):
+        print(k, end=" ")
+    for l in range(i-1, 0, -1):
+        print(l, end=' ')
+    res = res - 2
+    print()
+
+............................................
+"""
+Enter the value = 4
+1
+2*3
+4*5*6
+7*8*9*10
+7*8*9*10
+4*5*6
+2*3
+1
+"""
+n = int(input("Enter the value = "))
+c = 1
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        if j < i:
+            print(c, end='*')
+        else:
+            print(c, end='')
+        c = c + 1
+    print()
+c = c - n
+
+for i in range(n, 0, -1):
+    for j in range(1, i+1):
+        if j<i:
+            print(c, end='*')
+        else:
+            print(c, end='')
+        c = c+1
+    c=(c+1)-2*i
+    print()
+
